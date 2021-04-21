@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        figure {
+            width: 30%;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1><a href="/">My Gallery</a></h1>
+        <h1><a href="/addNew">Add</a></h1>
+    </div>
+    <%= %>
+        <figure>
+            <img src=<%=result.url %> alt="">
+            <figcaption>
+                <h1>
+                    By: <%=result.author %>
+                </h1>
+                <h3>
+                    Rating: <%=result.rating %>
+                </h3>
+                <h6>
+                    created: <%=result.createdAt %>
+                </h6>
+                <a href=<%=`/updateItem/${result._id} `%>>Update</a>
+                <a href=<%=`/delete/${result._id} `%>>Delete</a>
+                <button id="delete" data-superman=<%=`/delete1/${result._id} `%>>Delete</button>
+            </figcaption>
+        </figure>
+        <script>
+            const button = document.querySelector('#delete');
+            button.addEventListener('click', (e) => {
+                console.log('clicked')
+                console.log(button.dataset.superman)
+                fetch(button.dataset.superman, { method: 'DELETE' })
+                    .then(data => {
+                        console.log(data.json())
+                        window.location = "/"
+                    })
+                    .catch(err => console.log(err))
+            })
+        </script>
+</body>
+
+</html>

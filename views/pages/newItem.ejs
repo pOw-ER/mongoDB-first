@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1><a href="/">My Gallery</a></h1>
+        <h1><a href="/addNew">Add</a></h1>
+    </div>
+    <h1>ADD NEW</h1>
+    <form action="/new" method="post">
+        <label for="">url</label>
+        <input type="text" name="url" id="" placeholder="url">
+        <label for="">author</label>
+        <input type="text" name="author" id="" placeholder="author">
+        <label for="">rating</label>
+        <input type="range" name="rating" min="0" max="10" id="">
+        <input type="submit" value="Add">
+    </form>
+</body>
+
+</html>

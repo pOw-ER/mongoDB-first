@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1><a href="/">My Gallery</a></h1>
+        <h1><a href="/addNew">Add</a></h1>
+    </div>
+    <h1>Update</h1>
+    <form action="/update" method="post">
+        <input type="hidden" name="id" value=<%=result._id %>>
+        <label for="">url</label>
+        <input type="text" name="url" id="" placeholder="url" value=<%=result.url %> >
+        <label for="">author</label>
+        <input type="text" name="author" id="" placeholder="author" value=<%=result.author %>>
+        <label for="">rating</label>
+        <input type="range" name="rating" min="0" max="10" id="" value=<%=result.rating %>>
+        <input type="submit" value="update">
+    </form>
+
+</body>
+
+</html>
